@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Space Events API</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    background: #fff;
+    color: #111;
+    padding: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  h1 { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+  .meta { color: #666; font-size: 12px; margin-bottom: 20px; }
+  .meta a { color: inherit; }
+
+  .stats {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .stat { font-size: 12px; color: #555; }
+  .stat strong { display: block; font-size: 20px; color: #111; }
+
+  .toolbar {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    align-items: center;
+  }
+  .toolbar button {
+    font-size: 12px;
+    padding: 4px 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    cursor: pointer;
+    color: #333;
+  }
+  .toolbar button.active { background: #111; color: #fff; border-color: #111; }
+  .toolbar input {
+    font-size: 12px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    width: 200px;
+  }
+
+  table { width: 100%; border-collapse: collapse; }
+  thead th {
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    padding: 6px 8px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  tbody tr { border-bottom: 1px solid #f0f0f0; cursor: pointer; }
+  tbody tr:hover { background: #fafafa; }
+  tbody td { padding: 8px; vertical-align: top; }
+
+  .type-badge {
+    display: inline-block;
+    font-size: 10px;
+    padding: 1px 6px;
+    border-radius: 2px;
+    background: #f0f0f0;
+    color: #444;
+    white-space: nowrap;
+  }
+  .type-solar_flare           { background: #fff3e0; color: #b45309; }
+  .type-coronal_mass_ejection { background: #fef9c3; color: #854d0e; }
+  .type-gravitational_wave    { background: #f3e8ff; color: #7e22ce; }
+
+  .sev { font-size: 10px; color: #888; }
+  .sev-extreme { color: #dc2626; }
+  .sev-high    { color: #d97706; }
+  .sev-moderate{ color: #059669; }
+
+  .title-col { font-weight: 500; font-size: 13px; }
+  .desc-col  { color: #555; font-size: 12px; line-height: 1.4; }
+  .time-col  { white-space: nowrap; color: #888; font-size: 11px; }
+
+  .detail-row td {
+    background: #fafafa;
+    font-size: 12px;
+    color: #444;
+    padding: 10px 8px 10px 24px;
+    border-bottom: 1px solid #e5e5e5;
+  }
+  .detail-row dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 16px; }
+  .detail-row dt { font-weight: 600; color: #666; }
+  .detail-row a  { color: #2563eb; font-size: 11px; }
+
+  .empty { text-align: center; padding: 48px; color: #999; }
+</style>
+</head>
+<body>
+
+<h1>Spase Simple API</h1>
+<p class="meta">
+  Solar Flares · CME · Gravitational Waves &nbsp;·&nbsp;
+  <a id="api-link" href="events.json">events.json</a> &nbsp;·&nbsp;
+  updated hourly &nbsp;·&nbsp; <span id="generated-at">loading…</span>
+</p>
+
+<div class="stats" id="stats"></div>
+
+<div class="toolbar">
+  <button class="active" data-type="all" onclick="filter(this)">All</button>
+  <button data-type="solar_flare" onclick="filter(this)">Solar Flares</button>
+  <button data-type="coronal_mass_ejection" onclick="filter(this)">CME</button>
+  <button data-type="gravitational_wave" onclick="filter(this)">Grav. Waves</button>
+  <input type="search" id="search" placeholder="Search…" oninput="render()">
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Time</th>
+      <th>Severity</th>
+    </tr>
+  </thead>
+  <tbody id="tbody"></tbody>
+</table>
+
+<script>
+let allEvents = [];
+let activeType = 'all';
+
+const TYPE_LABELS = {
+  solar_flare: 'Solar Flare',
+  coronal_mass_ejection: 'CME',
+  gravitational_wave: 'Grav. Wave',
+};
+
+function fmtTime(t) {
+  if (!t) return '—';
+  try { return new Date(t).toISOString().slice(0, 16).replace('T', ' ') + ' UTC'; }
+  catch { return t; }
+}
+
+function filter(btn) {
+  document.querySelectorAll('.toolbar button').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeType = btn.dataset.type;
+  render();
+}
+
+function render() {
+  const q = document.getElementById('search').value.toLowerCase();
+  let rows = allEvents;
+  if (activeType !== 'all') rows = rows.filter(e => e.type === activeType);
+  if (q) rows = rows.filter(e =>
+    [e.title, e.description, e.type, e.source].join(' ').toLowerCase().includes(q)
+  );
+
+  const tbody = document.getElementById('tbody');
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty">No events found.</td></tr>';
+    return;
+  }
+
+  tbody.innerHTML = rows.map(e => {
+    const meta = e.metadata || {};
+    const metaRows = Object.entries(meta)
+      .filter(([,v]) => v !== null && v !== undefined && v !== '')
+      .map(([k,v]) => `<dt>${k.replace(/_/g,' ')}</dt><dd>${typeof v === 'object' ? JSON.stringify(v) : v}</dd>`)
+      .join('');
+    const link = e.url ? `<a href="${e.url}" target="_blank" rel="noopener">Source ↗</a>` : '';
+
+    return `
+      <tr onclick="toggle('${e.id}')">
+        <td><span class="type-badge type-${e.type}">${TYPE_LABELS[e.type] || e.type}</span></td>
+        <td class="title-col">${e.title || e.id}</td>
+        <td class="desc-col">${e.description || ''}</td>
+        <td class="time-col">${fmtTime(e.time)}</td>
+        <td class="sev sev-${e.severity}">${e.severity}</td>
+      </tr>
+      <tr id="detail-${e.id}" class="detail-row" style="display:none">
+        <td colspan="5">
+          <dl>${metaRows}</dl>
+          ${link}
+        </td>
+      </tr>`;
+  }).join('');
+}
+
+function toggle(id) {
+  const row = document.getElementById('detail-' + id);
+  if (row) row.style.display = row.style.display === 'none' ? '' : 'none';
+}
+
+async function load() {
+  const url = location.origin + location.pathname.replace(/\/[^/]*$/, '') + '/events.json';
+  document.getElementById('api-link').href = url;
+
+  try {
+    const data = await fetch(url + '?_=' + Date.now()).then(r => r.json());
+    const meta = data.meta || {};
+    allEvents = data.events || [];
+
+    document.getElementById('generated-at').textContent =
+      meta.generated_at ? 'last updated ' + fmtTime(meta.generated_at) : '';
+
+    const counts = meta.event_counts || {};
+    const statDefs = [
+      { label: 'Total', val: meta.total_events ?? allEvents.length },
+      { label: 'Solar Flares', val: counts.solar_flare ?? 0 },
+      { label: 'CME', val: counts.coronal_mass_ejection ?? 0 },
+      { label: 'Grav. Waves', val: counts.gravitational_wave ?? 0 },
+    ];
+    document.getElementById('stats').innerHTML = statDefs
+      .map(s => `<div class="stat"><strong>${s.val}</strong>${s.label}</div>`)
+      .join('');
+
+    render();
+  } catch (err) {
+    document.getElementById('tbody').innerHTML =
+      `<tr><td colspan="5" class="empty">Failed to load events.json — ${err.message}</td></tr>`;
+  }
+}
+
+load();
+</script>
+</body>
+</html>
