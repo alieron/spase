@@ -1,0 +1,31 @@
+name: Aggregate Space Events
+
+on:
+  schedule:
+    - cron: "5 3 * * *"   # 03:05 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  aggregate-and-deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Run aggregator
+        run: python aggregate.py
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.7.3
+        with:
+          branch: gh-pages
+          folder: docs
