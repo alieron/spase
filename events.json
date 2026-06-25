@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generated_at": "2026-06-24T06:51:35Z",
-    "window_start": "2026-06-10T06:51:35Z",
-    "window_end": "2026-06-24T06:51:35Z",
+    "generated_at": "2026-06-25T06:51:01Z",
+    "window_start": "2026-06-11T06:51:01Z",
+    "window_end": "2026-06-25T06:51:01Z",
     "retention_days": 14,
-    "total_events": 63,
+    "total_events": 61,
     "event_counts": {
-      "coronal_mass_ejection": 56,
-      "solar_flare": 7
+      "coronal_mass_ejection": 55,
+      "solar_flare": 6
     },
     "schema_version": "2.0",
     "sources": [
@@ -16,6 +16,40 @@
     ]
   },
   "events": [
+    {
+      "id": "cme-2026-06-24T13:00:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-06-24T18:47Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 380.0 km/s. Type: S.",
+      "severity": "low",
+      "metadata": {
+        "speed_km_s": 380.0,
+        "type": "S",
+        "half_angle": 12.0,
+        "latitude": 2.0,
+        "longitude": -30.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/47019/-1"
+    },
+    {
+      "id": "cme-2026-06-24T01:26:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-06-24T07:34Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 590.0 km/s. Type: C.",
+      "severity": "moderate",
+      "metadata": {
+        "speed_km_s": 590.0,
+        "type": "C",
+        "half_angle": 23.0,
+        "latitude": 51.0,
+        "longitude": -44.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/47015/-1"
+    },
     {
       "id": "cme-2026-06-23T19:00:00-CME-001",
       "type": "coronal_mass_ejection",
@@ -1018,74 +1052,6 @@
         "active_region": 14465
       },
       "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/FLR/46800/-1"
-    },
-    {
-      "id": "cme-2026-06-11T00:36:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-06-11T04:45Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 885.0 km/s. Type: C.",
-      "severity": "moderate",
-      "metadata": {
-        "speed_km_s": 885.0,
-        "type": "C",
-        "half_angle": 41.0,
-        "latitude": 21.0,
-        "longitude": -32.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/46778/-1"
-    },
-    {
-      "id": "cme-2026-06-10T18:12:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-06-11T00:46Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 512.0 km/s. Type: C.",
-      "severity": "moderate",
-      "metadata": {
-        "speed_km_s": 512.0,
-        "type": "C",
-        "half_angle": 22.0,
-        "latitude": -29.0,
-        "longitude": 168.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/46769/-1"
-    },
-    {
-      "id": "cme-2026-06-10T18:08:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-06-10T23:37Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 619.0 km/s. Type: C.",
-      "severity": "moderate",
-      "metadata": {
-        "speed_km_s": 619.0,
-        "type": "C",
-        "half_angle": 31.0,
-        "latitude": 18.0,
-        "longitude": 153.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/46767/-1"
-    },
-    {
-      "id": "flr-2026-06-10T23:30:00-FLR-001",
-      "type": "solar_flare",
-      "source": "NASA DONKI",
-      "time": "2026-06-10T23:30Z",
-      "title": "Solar Flare C6.7",
-      "description": "Class C6.7 solar flare. Peak: 2026-06-11T00:02Z. Location: N09E39.",
-      "severity": "moderate",
-      "metadata": {
-        "class": "C6.7",
-        "peak_time": "2026-06-11T00:02Z",
-        "end_time": "2026-06-11T00:37Z",
-        "source_location": "N09E39",
-        "active_region": 14465
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/FLR/46774/-1"
     }
   ]
 }
