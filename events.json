@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generated_at": "2026-08-16T03:50:48Z",
-    "window_start": "2026-08-02T03:50:48Z",
-    "window_end": "2026-08-16T03:50:48Z",
+    "generated_at": "2026-08-17T03:52:48Z",
+    "window_start": "2026-08-03T03:52:48Z",
+    "window_end": "2026-08-17T03:52:48Z",
     "retention_days": 14,
-    "total_events": 34,
+    "total_events": 36,
     "event_counts": {
-      "coronal_mass_ejection": 32,
-      "solar_flare": 2
+      "coronal_mass_ejection": 33,
+      "solar_flare": 3
     },
     "schema_version": "2.0",
     "sources": [
@@ -16,6 +16,40 @@
     ]
   },
   "events": [
+    {
+      "id": "cme-2026-08-16T19:48:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-08-17T05:41Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 362.0 km/s. Type: S.",
+      "severity": "low",
+      "metadata": {
+        "speed_km_s": 362.0,
+        "type": "S",
+        "half_angle": 45.0,
+        "latitude": 22.0,
+        "longitude": 42.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48120/-1"
+    },
+    {
+      "id": "flr-2026-08-16T19:01:00-FLR-001",
+      "type": "solar_flare",
+      "source": "NASA DONKI",
+      "time": "2026-08-16T19:01Z",
+      "title": "Solar Flare C8.2",
+      "description": "Class C8.2 solar flare. Peak: 2026-08-16T19:28Z. Location: N10W42.",
+      "severity": "moderate",
+      "metadata": {
+        "class": "C8.2",
+        "peak_time": "2026-08-16T19:28Z",
+        "end_time": "2026-08-16T19:45Z",
+        "source_location": "N10W42",
+        "active_region": 14506
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/FLR/48121/-1"
+    },
     {
       "id": "cme-2026-08-15T13:48:00-CME-001",
       "type": "coronal_mass_ejection",
