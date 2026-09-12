@@ -1,12 +1,12 @@
 {
   "meta": {
-    "generated_at": "2026-09-11T07:54:07Z",
-    "window_start": "2026-08-28T07:54:07Z",
-    "window_end": "2026-09-11T07:54:07Z",
+    "generated_at": "2026-09-12T07:46:38Z",
+    "window_start": "2026-08-29T07:46:38Z",
+    "window_end": "2026-09-12T07:46:38Z",
     "retention_days": 14,
-    "total_events": 73,
+    "total_events": 75,
     "event_counts": {
-      "coronal_mass_ejection": 60,
+      "coronal_mass_ejection": 62,
       "solar_flare": 13
     },
     "schema_version": "2.0",
@@ -16,6 +16,91 @@
     ]
   },
   "events": [
+    {
+      "id": "cme-2026-09-11T16:12:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-09-12T02:15Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 340.0 km/s. Type: S.",
+      "severity": "low",
+      "metadata": {
+        "speed_km_s": 340.0,
+        "type": "S",
+        "half_angle": 10.0,
+        "latitude": -39.0,
+        "longitude": -80.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48672/-1"
+    },
+    {
+      "id": "cme-2026-09-11T14:36:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-09-12T01:10Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 309.0 km/s. Type: S.",
+      "severity": "low",
+      "metadata": {
+        "speed_km_s": 309.0,
+        "type": "S",
+        "half_angle": 27.0,
+        "latitude": 49.0,
+        "longitude": 75.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48669/-1"
+    },
+    {
+      "id": "cme-2026-09-11T06:24:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-09-11T15:19Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 391.0 km/s. Type: S.",
+      "severity": "low",
+      "metadata": {
+        "speed_km_s": 391.0,
+        "type": "S",
+        "half_angle": 16.0,
+        "latitude": 66.0,
+        "longitude": 129.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48655/-1"
+    },
+    {
+      "id": "cme-2026-09-11T05:36:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-09-11T12:19Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 549.0 km/s. Type: C.",
+      "severity": "moderate",
+      "metadata": {
+        "speed_km_s": 549.0,
+        "type": "C",
+        "half_angle": 20.0,
+        "latitude": 55.0,
+        "longitude": 134.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48653/-1"
+    },
+    {
+      "id": "cme-2026-09-10T23:30:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-09-11T09:26Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 305.0 km/s. Type: S.",
+      "severity": "low",
+      "metadata": {
+        "speed_km_s": 305.0,
+        "type": "S",
+        "half_angle": 26.0,
+        "latitude": -48.0,
+        "longitude": -86.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48659/-1"
+    },
     {
       "id": "cme-2026-09-10T23:36:00-CME-001",
       "type": "coronal_mass_ejection",
@@ -66,6 +151,40 @@
         "longitude": 49.0
       },
       "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48643/-1"
+    },
+    {
+      "id": "cme-2026-09-09T16:09:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-09-10T06:44Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 228.0 km/s. Type: S.",
+      "severity": "low",
+      "metadata": {
+        "speed_km_s": 228.0,
+        "type": "S",
+        "half_angle": 44.0,
+        "latitude": -12.0,
+        "longitude": -90.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48657/-1"
+    },
+    {
+      "id": "cme-2026-09-09T16:00:00-CME-001",
+      "type": "coronal_mass_ejection",
+      "source": "NASA DONKI",
+      "time": "2026-09-10T04:39Z",
+      "title": "Coronal Mass Ejection",
+      "description": "CME at 21.5 solar radii. Speed: 282.0 km/s. Type: S.",
+      "severity": "low",
+      "metadata": {
+        "speed_km_s": 282.0,
+        "type": "S",
+        "half_angle": 35.0,
+        "latitude": 1.0,
+        "longitude": 29.0
+      },
+      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48661/-1"
     },
     {
       "id": "cme-2026-09-09T10:23:00-CME-001",
@@ -1171,91 +1290,6 @@
         "longitude": 107.0
       },
       "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48379/-1"
-    },
-    {
-      "id": "cme-2026-08-28T15:12:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-08-29T02:53Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 274.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 274.0,
-        "type": "S",
-        "half_angle": 12.0,
-        "latitude": -5.0,
-        "longitude": -40.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48362/-1"
-    },
-    {
-      "id": "cme-2026-08-28T10:09:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-08-28T20:43Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 285.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 285.0,
-        "type": "S",
-        "half_angle": 19.0,
-        "latitude": -40.0,
-        "longitude": 99.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48356/-1"
-    },
-    {
-      "id": "cme-2026-08-28T10:45:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-08-28T16:18Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 495.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 495.0,
-        "type": "S",
-        "half_angle": 30.0,
-        "latitude": 38.0,
-        "longitude": -151.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48345/-1"
-    },
-    {
-      "id": "cme-2026-08-28T08:48:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-08-28T13:58Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 609.0 km/s. Type: C.",
-      "severity": "moderate",
-      "metadata": {
-        "speed_km_s": 609.0,
-        "type": "C",
-        "half_angle": 27.0,
-        "latitude": 35.0,
-        "longitude": -166.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48336/-1"
-    },
-    {
-      "id": "cme-2026-08-28T00:12:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-08-28T11:39Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 317.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 317.0,
-        "type": "S",
-        "half_angle": 19.0,
-        "latitude": 4.0,
-        "longitude": 129.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48353/-1"
     }
   ]
 }
