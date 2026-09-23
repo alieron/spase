@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generated_at": "2026-09-22T08:21:42Z",
-    "window_start": "2026-09-08T08:21:42Z",
-    "window_end": "2026-09-22T08:21:42Z",
+    "generated_at": "2026-09-23T08:23:42Z",
+    "window_start": "2026-09-09T08:23:42Z",
+    "window_end": "2026-09-23T08:23:42Z",
     "retention_days": 14,
-    "total_events": 27,
+    "total_events": 25,
     "event_counts": {
-      "coronal_mass_ejection": 24,
-      "solar_flare": 3
+      "coronal_mass_ejection": 23,
+      "solar_flare": 2
     },
     "schema_version": "2.0",
     "sources": [
@@ -131,7 +131,7 @@
         "peak_time": "2026-09-19T18:17Z",
         "end_time": "2026-09-19T18:32Z",
         "source_location": "N14E90",
-        "active_region": null
+        "active_region": 14535
       },
       "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/FLR/48733/-1"
     },
@@ -440,40 +440,6 @@
         "active_region": 14524
       },
       "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/FLR/48629/-1"
-    },
-    {
-      "id": "cme-2026-09-08T13:59:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-09-08T21:47Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 365.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 365.0,
-        "type": "S",
-        "half_angle": 21.0,
-        "latitude": 19.0,
-        "longitude": 35.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48623/-1"
-    },
-    {
-      "id": "flr-2026-09-08T12:19:00-FLR-001",
-      "type": "solar_flare",
-      "source": "NASA DONKI",
-      "time": "2026-09-08T12:19Z",
-      "title": "Solar Flare C2.4",
-      "description": "Class C2.4 solar flare. Peak: 2026-09-08T12:24Z. Location: N10W35.",
-      "severity": "moderate",
-      "metadata": {
-        "class": "C2.4",
-        "peak_time": "2026-09-08T12:24Z",
-        "end_time": "2026-09-08T12:27Z",
-        "source_location": "N10W35",
-        "active_region": 14521
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/FLR/48618/-1"
     }
   ]
 }
