@@ -1,13 +1,13 @@
 {
   "meta": {
-    "generated_at": "2026-09-23T08:23:42Z",
-    "window_start": "2026-09-09T08:23:42Z",
-    "window_end": "2026-09-23T08:23:42Z",
+    "generated_at": "2026-09-24T08:15:47Z",
+    "window_start": "2026-09-10T08:15:47Z",
+    "window_end": "2026-09-24T08:15:47Z",
     "retention_days": 14,
-    "total_events": 25,
+    "total_events": 19,
     "event_counts": {
-      "coronal_mass_ejection": 23,
-      "solar_flare": 2
+      "coronal_mass_ejection": 18,
+      "solar_flare": 1
     },
     "schema_version": "2.0",
     "sources": [
@@ -338,108 +338,6 @@
         "longitude": 49.0
       },
       "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48643/-1"
-    },
-    {
-      "id": "cme-2026-09-09T16:09:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-09-10T06:44Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 228.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 228.0,
-        "type": "S",
-        "half_angle": 44.0,
-        "latitude": -12.0,
-        "longitude": -90.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48657/-1"
-    },
-    {
-      "id": "cme-2026-09-09T16:00:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-09-10T04:39Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 282.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 282.0,
-        "type": "S",
-        "half_angle": 35.0,
-        "latitude": 1.0,
-        "longitude": 29.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48661/-1"
-    },
-    {
-      "id": "cme-2026-09-09T10:23:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-09-10T02:47Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 207.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 207.0,
-        "type": "S",
-        "half_angle": 39.0,
-        "latitude": 5.0,
-        "longitude": 5.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48631/-1"
-    },
-    {
-      "id": "cme-2026-09-09T07:24:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-09-10T01:03Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 223.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 223.0,
-        "type": "S",
-        "half_angle": 19.0,
-        "latitude": 50.0,
-        "longitude": 88.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48635/-1"
-    },
-    {
-      "id": "cme-2026-09-09T10:36:00-CME-001",
-      "type": "coronal_mass_ejection",
-      "source": "NASA DONKI",
-      "time": "2026-09-09T23:40Z",
-      "title": "Coronal Mass Ejection",
-      "description": "CME at 21.5 solar radii. Speed: 308.0 km/s. Type: S.",
-      "severity": "low",
-      "metadata": {
-        "speed_km_s": 308.0,
-        "type": "S",
-        "half_angle": 34.0,
-        "latitude": -2.0,
-        "longitude": -100.0
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/CMEAnalysis/48633/-1"
-    },
-    {
-      "id": "flr-2026-09-09T08:48:00-FLR-001",
-      "type": "solar_flare",
-      "source": "NASA DONKI",
-      "time": "2026-09-09T08:48Z",
-      "title": "Solar Flare C3.4",
-      "description": "Class C3.4 solar flare. Peak: 2026-09-09T09:08Z. Location: N15W05.",
-      "severity": "moderate",
-      "metadata": {
-        "class": "C3.4",
-        "peak_time": "2026-09-09T09:08Z",
-        "end_time": "2026-09-09T09:23Z",
-        "source_location": "N15W05",
-        "active_region": 14524
-      },
-      "url": "https://kauai.ccmc.gsfc.nasa.gov/DONKI/view/FLR/48629/-1"
     }
   ]
 }
