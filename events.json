@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated_at": "2026-10-02T09:30:42Z",
-    "window_start": "2026-09-18T09:30:42Z",
-    "window_end": "2026-10-02T09:30:42Z",
+    "generated_at": "2026-10-03T08:58:16Z",
+    "window_start": "2026-09-19T08:58:16Z",
+    "window_end": "2026-10-03T08:58:16Z",
     "retention_days": 14,
     "total_events": 0,
     "event_counts": {},
